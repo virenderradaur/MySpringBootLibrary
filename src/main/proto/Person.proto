@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_package = "com.veer.proto";
+option java_outer_classname = "PersonDetailProto";
+option java_multiple_files = true;
+
+
+message Person{
+	 int32 id = 1;
+	 string name = 2;
+	 int32 age = 3;
+}
+
+message PersonDetailsRequest {
+	 Person person = 1;
+}
+
+message PersonDetailsResponse {
+	 string result =  1;
+}
+service PersonService {
+	rpc PersonDetails(PersonDetailsRequest) returns (PersonDetailsResponse) {};
+}
